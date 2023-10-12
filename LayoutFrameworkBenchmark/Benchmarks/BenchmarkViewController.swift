@@ -7,6 +7,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import UIKit
+import SwiftUI
 
 /// Runs benchmarks for different kinds of layouts.
 class BenchmarkViewController: UITableViewController {
@@ -18,37 +19,48 @@ class BenchmarkViewController: UITableViewController {
         //
         // Ordered alphabetically
         //
-        
+
+      ViewControllerData(title: "DivKit static", factoryBlock: { viewCount in
+          let data = FeedItemData.generate(count: viewCount)
+          return CollectionViewControllerDivKitView(data: data)
+      }),
+
+      ViewControllerData(title: "DivKit with variables", factoryBlock: { viewCount in
+          let data = FeedItemData.generate(count: viewCount)
+          return CollectionViewControllerDivKitWithVariablesView(data: data)
+      }),
+
+      ViewControllerData(title: "DivKit with preloader", factoryBlock: { viewCount in
+          let data = FeedItemData.generate(count: viewCount)
+          return CollectionViewControllerDivKitWithPreloaderView(data: data)
+      }),
+
         ViewControllerData(title: "Auto Layout", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemAutoLayoutView(data: data)
         }),
-        
+
         ViewControllerData(title: "FlexLayout 1.3", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemFlexLayoutView(data: data)
         }),
-        
-        ViewControllerData(title: "LayoutKit 10.1", factoryBlock: { viewCount in
-            let data = FeedItemData.generate(count: viewCount)
-            return CollectionViewControllerFeedItemLayoutKitView(data: data)
-        }),
+
 
         ViewControllerData(title: "Manual Layout", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemManualView(data: data)
         }),
-		
+
 		ViewControllerData(title: "NKFrameLayoutKit 2.5", factoryBlock: { viewCount in
 			let data = FeedItemData.generate(count: viewCount)
 			return CollectionViewControllerFeedItemNKFrameLayoutKitView(data: data)
 		}),
-        
+
         ViewControllerData(title: "NotAutoLayout 3.2", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemNotAutoLayoutView(data: data)
         }),
-        
+
         ViewControllerData(title: "PinLayout 1.10", factoryBlock: { viewCount in
             let data = FeedItemData.generate(count: viewCount)
             return CollectionViewControllerFeedItemPinLayoutView(data: data)
@@ -112,9 +124,11 @@ class BenchmarkViewController: UITableViewController {
 
     private func runAllBenchmarks() {
         var benchmarkIndex = 0
+      var perfStats = [PerfStat]()
 
         func benchmarkCompleted(_ results: [Result]) {
             printResults(name: viewControllers[benchmarkIndex].title, results: results)
+          perfStats.append(.init(library: viewControllers[benchmarkIndex].title, time: results.last!.secondsPerOperation))
 
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: false)
@@ -123,6 +137,7 @@ class BenchmarkViewController: UITableViewController {
                 if benchmarkIndex < self.viewControllers.count {
                     self.runBenchmark(viewControllerData: self.viewControllers[benchmarkIndex], logResults: false, completed: benchmarkCompleted)
                 } else {
+                  self.navigationController?.pushViewController(UIHostingController(rootView: BarChart(data: perfStats)), animated: false)
                     print("Completed!")
                 }
             }
@@ -142,7 +157,7 @@ class BenchmarkViewController: UITableViewController {
     }
 
     private func runBenchmark(viewControllerData: ViewControllerData, logResults: Bool, completed: ((_ results: [Result]) -> Void)?) {
-        guard let viewController = viewControllerData.factoryBlock(20) else {
+        guard let viewController = viewControllerData.factoryBlock(100) else {
             return
         }
 
@@ -153,8 +168,7 @@ class BenchmarkViewController: UITableViewController {
     }
 
     private func benchmark(_ viewControllerData: ViewControllerData, logResults: Bool, completed: ((_ results: [Result]) -> Void)?) {
-//        let iterations = [1]
-        let iterations = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        let iterations = [100]
         var results: [Result] = []
 
         for i in iterations {

@@ -1,6 +1,19 @@
 PODS:
-  - FlexLayout (1.3.23)
-  - LayoutKit (10.1.0)
+  - DivKit (28.2.0):
+    - DivKit_LayoutKit (= 28.2.0)
+    - DivKit_Serialization (= 28.2.0)
+    - VGSLCommonCore (~> 2.2)
+    - VGSLNetworking (~> 2.2)
+  - DivKit_LayoutKit (28.2.0):
+    - DivKit_LayoutKitInterface (= 28.2.0)
+    - VGSLCommonCore (~> 2.2)
+  - DivKit_LayoutKitInterface (28.2.0):
+    - VGSLBase (~> 2.2)
+    - VGSLBaseTiny (~> 2.2)
+    - VGSLBaseUI (~> 2.2)
+  - DivKit_Serialization (28.2.0):
+    - VGSLCommonCore (~> 2.2)
+  - FlexLayout (2.0.02)
   - NKFrameLayoutKit (2.5)
   - NotAutoLayout (3.2.0)
   - PINCache (3.0.3):
@@ -10,8 +23,8 @@ PODS:
     - PINCache/Core
   - PINCache/Core (3.0.3):
     - PINOperation (~> 1.2.1)
-  - PinLayout (1.10.0)
-  - PINOperation (1.2.1)
+  - PinLayout (1.10.4)
+  - PINOperation (1.2.2)
   - PINRemoteImage/Core (3.0.3):
     - PINOperation
   - PINRemoteImage/iOS (3.0.3):
@@ -19,7 +32,7 @@ PODS:
   - PINRemoteImage/PINCache (3.0.3):
     - PINCache (~> 3.0.3)
     - PINRemoteImage/Core
-  - Reveal-SDK (33)
+  - Reveal-SDK (41)
   - Texture (3.1.0):
     - Texture/AssetsLibrary (= 3.1.0)
     - Texture/Core (= 3.1.0)
@@ -40,18 +53,44 @@ PODS:
     - Texture/Core
   - Texture/Video (3.1.0):
     - Texture/Core
+  - VGSLBase (2.3.0):
+    - VGSLBaseTiny (= 2.3.0)
+    - VGSLBaseUI (= 2.3.0)
+  - VGSLBaseTiny (2.3.0)
+  - VGSLBaseUI (2.3.0):
+    - VGSLBaseTiny (= 2.3.0)
+  - VGSLCommonCore (2.3.0):
+    - VGSLBase (= 2.3.0)
+  - VGSLNetworking (2.3.0):
+    - VGSLBase (= 2.3.0)
 
 DEPENDENCIES:
+  - DivKit
   - FlexLayout
-  - LayoutKit (from `https://github.com/LinkedInAttic/LayoutKit.git`)
   - NKFrameLayoutKit
   - NotAutoLayout
   - PinLayout
   - Reveal-SDK
   - Texture
+  - VGSLBase
+  - VGSLBaseTiny
+  - VGSLBaseUI
+  - VGSLCommonCore
+  - VGSLNetworking
 
 SPEC REPOS:
+  https://github.com/divkit/divkit-ios.git:
+    - DivKit
+  https://github.com/yandex/vgsl:
+    - VGSLBase
+    - VGSLBaseTiny
+    - VGSLBaseUI
+    - VGSLCommonCore
+    - VGSLNetworking
   trunk:
+    - DivKit_LayoutKit
+    - DivKit_LayoutKitInterface
+    - DivKit_Serialization
     - FlexLayout
     - NKFrameLayoutKit
     - NotAutoLayout
@@ -62,27 +101,26 @@ SPEC REPOS:
     - Reveal-SDK
     - Texture
 
-EXTERNAL SOURCES:
-  LayoutKit:
-    :git: https://github.com/LinkedInAttic/LayoutKit.git
-
-CHECKOUT OPTIONS:
-  LayoutKit:
-    :commit: 1f1b067b6b11a0779ea6b6ccd976585a1d7bb79b
-    :git: https://github.com/LinkedInAttic/LayoutKit.git
-
 SPEC CHECKSUMS:
-  FlexLayout: 5b44c0538e7eaa2110e3160dfdfb74611676fb91
-  LayoutKit: 66478bb3af5ce4519a056d9465bc4c7585d2350b
+  DivKit: f746b532d2113d35b6ba266d36573304cdd8b860
+  DivKit_LayoutKit: 1b38135b54f89d1a620a45c34bd17420b12f4ebf
+  DivKit_LayoutKitInterface: f9a3a6d1402626c6ab39dce357989bff431eb4f2
+  DivKit_Serialization: 8925b2c2cecb48bbb464734850505d3b95a80f13
+  FlexLayout: bd1d1738d67a455205e14c42492fe5450e3c1554
   NKFrameLayoutKit: 8485fd4fb04c2c99e38e4dfd4b65a99ce10689b9
   NotAutoLayout: 4723ad82a21a7c6c60c823fff7f7c29467811b92
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
-  PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
-  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  PinLayout: f8a677ce0cd1cfe96b58435d029b4ceb4ce9c04c
+  PINOperation: daa34d4aa1d8449089be7d405b9d974abc4724c6
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
-  Reveal-SDK: effba1c940b8337195563c425a6b5862ec875caa
+  Reveal-SDK: c33a66072cd9ac5f3e6fb94984743ab5f3057d28
   Texture: 2e8ab2519452515f7f5a520f5a8f7e0a413abfa3
+  VGSLBase: 7858c24ded9213e19d7c800797c968b332029cf4
+  VGSLBaseTiny: d896482c3ea9a0bf3366d2b646f3cdbf1e603761
+  VGSLBaseUI: c9e2e722cb1d889f55529fd80b339bd05f482f5e
+  VGSLCommonCore: f938c99cae085876605dcbde1b00181779d4beb1
+  VGSLNetworking: 83ce7bd007175cceb8ffe92149061daf30021c05
 
-PODFILE CHECKSUM: dca07728abcbc052a30cef591b8cd349297c894b
+PODFILE CHECKSUM: c2ece0f73a662d6b7043ef08cf421f0cabd65a2d
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.12.1

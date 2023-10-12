@@ -23,7 +23,11 @@ import UIKit
 class CollectionViewControllerFeedItemUIStackView: CollectionViewController<FeedItemUIStackView> {}
 
 class CollectionViewControllerFeedItemAutoLayoutView: CollectionViewController<FeedItemAutoLayoutView> {}
-class CollectionViewControllerFeedItemLayoutKitView: CollectionViewController<FeedItemLayoutKitView> {}
+
+class CollectionViewControllerDivKitView: CollectionViewController<DivKitPerfView> {}
+class CollectionViewControllerDivKitWithVariablesView: CollectionViewController<DivKitWithVariablesPerfView> {}
+class CollectionViewControllerDivKitWithPreloaderView: CollectionViewController<DivKitWithPreloaderView> {}
+//class CollectionViewControllerFeedItemLayoutKitView: CollectionViewController<FeedItemLayoutKitView> {}
 class CollectionViewControllerFeedItemManualView: CollectionViewController<FeedItemManualView> {}
 class CollectionViewControllerFeedItemNotAutoLayoutView: CollectionViewController<FeedItemNotAutoLayoutView> {}
 class CollectionViewControllerFeedItemPinLayoutView: CollectionViewController<FeedItemPinLayoutView> {}
@@ -65,6 +69,7 @@ class CollectionViewController<ContentViewType: UIView>: UICollectionViewControl
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CellType
         cell.setData(data[indexPath.row])
+//        print(indexPath)
         return cell
     }
 

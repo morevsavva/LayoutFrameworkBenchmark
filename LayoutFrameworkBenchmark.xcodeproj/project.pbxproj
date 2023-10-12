@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,10 @@
 		24661D001F4EFFF5002CB883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661CFF1F4EFFF5002CB883 /* AppDelegate.swift */; };
 		24661D071F4EFFF5002CB883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24661D061F4EFFF5002CB883 /* Assets.xcassets */; };
 		24661D0A1F4EFFF5002CB883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24661D081F4EFFF5002CB883 /* LaunchScreen.storyboard */; };
+		434DA0CA2AD5A9A500DECBCC /* DivKitPerfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434DA0C92AD5A9A500DECBCC /* DivKitPerfView.swift */; };
+		43B656052AD6F03C0038F1FC /* DivKitWithVariablesPerfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B656042AD6F03C0038F1FC /* DivKitWithVariablesPerfView.swift */; };
+		43B656072AD707EA0038F1FC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B656062AD707EA0038F1FC /* ResultViewController.swift */; };
+		43DE9AD62AD8556500F4FC05 /* DivKitWithPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE9AD52AD8556500F4FC05 /* DivKitWithPreloaderView.swift */; };
 		639E5A2020DF62D700C6BCEA /* NKFrameLayoutKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E5A1F20DF62D700C6BCEA /* NKFrameLayoutKitView.swift */; };
 		BF3DC69820B560A400536177 /* FeedItemNotAutoLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DC69720B560A400536177 /* FeedItemNotAutoLayoutView.swift */; };
 		E4A8A14124FE99B1009D872B /* FeedItemTextureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A8A14024FE982E009D872B /* FeedItemTextureNode.swift */; };
@@ -50,6 +54,10 @@
 		24661D061F4EFFF5002CB883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24661D091F4EFFF5002CB883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24661D0B1F4EFFF5002CB883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		434DA0C92AD5A9A500DECBCC /* DivKitPerfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivKitPerfView.swift; sourceTree = "<group>"; };
+		43B656042AD6F03C0038F1FC /* DivKitWithVariablesPerfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivKitWithVariablesPerfView.swift; sourceTree = "<group>"; };
+		43B656062AD707EA0038F1FC /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		43DE9AD52AD8556500F4FC05 /* DivKitWithPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivKitWithPreloaderView.swift; sourceTree = "<group>"; };
 		4F34489CA12B845548D7F17E /* Pods_LayoutFrameworkBenchmark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LayoutFrameworkBenchmark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E5A1F20DF62D700C6BCEA /* NKFrameLayoutKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKFrameLayoutKitView.swift; sourceTree = "<group>"; };
 		73BD901DE3512A23A7603899 /* Pods-LayoutFrameworkBenchmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayoutFrameworkBenchmark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +81,7 @@
 		2401BC741F4F017D00788998 /* Benchmarks */ = {
 			isa = PBXGroup;
 			children = (
+				434DA0C82AD5A96D00DECBCC /* DivKit */,
 				E4A8A13F24FE981F009D872B /* Texture */,
 				2401BCA21F4F045600788998 /* AutoLayout */,
 				2401BC921F4F020D00788998 /* FlexLayout */,
@@ -84,6 +93,7 @@
 				639E5A1E20DF620D00C6BCEA /* NKFrameLayoutKit */,
 				2401BC751F4F018C00788998 /* BenchmarkViewController.swift */,
 				2401BC761F4F018C00788998 /* CollectionViewController.swift */,
+				43B656062AD707EA0038F1FC /* ResultViewController.swift */,
 				2401BC771F4F018C00788998 /* DataBinder.swift */,
 				2401BC791F4F018C00788998 /* FeedItemData.swift */,
 				2401BC7F1F4F018C00788998 /* Stopwatch.swift */,
@@ -179,6 +189,16 @@
 			path = LayoutFrameworkBenchmark;
 			sourceTree = "<group>";
 		};
+		434DA0C82AD5A96D00DECBCC /* DivKit */ = {
+			isa = PBXGroup;
+			children = (
+				434DA0C92AD5A9A500DECBCC /* DivKitPerfView.swift */,
+				43B656042AD6F03C0038F1FC /* DivKitWithVariablesPerfView.swift */,
+				43DE9AD52AD8556500F4FC05 /* DivKitWithPreloaderView.swift */,
+			);
+			name = DivKit;
+			sourceTree = "<group>";
+		};
 		639E5A1E20DF620D00C6BCEA /* NKFrameLayoutKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,7 +281,7 @@
 				};
 			};
 			buildConfigurationList = 24661CF71F4EFFF5002CB883 /* Build configuration list for PBXProject "LayoutFrameworkBenchmark" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -297,31 +317,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FlexLayout/FlexLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
-				"${BUILT_PRODUCTS_DIR}/NKFrameLayoutKit/NKFrameLayoutKit.framework",
-				"${BUILT_PRODUCTS_DIR}/NotAutoLayout/NotAutoLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
-				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
-				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NKFrameLayoutKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotAutoLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LayoutFrameworkBenchmark/Pods-LayoutFrameworkBenchmark-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -355,7 +356,9 @@
 			files = (
 				E4A8A24F24FEDD14009D872B /* TextureCollectionViewController.swift in Sources */,
 				2401BCA11F4F044000788998 /* FeedItemUIStackView.swift in Sources */,
+				43B656072AD707EA0038F1FC /* ResultViewController.swift in Sources */,
 				2401BC8B1F4F018C00788998 /* Stopwatch.swift in Sources */,
+				43DE9AD62AD8556500F4FC05 /* DivKitWithPreloaderView.swift in Sources */,
 				2401BC8F1F4F01D600788998 /* FeedItemLayoutKitView.swift in Sources */,
 				2401BC851F4F018C00788998 /* FeedItemData.swift in Sources */,
 				2401BC831F4F018C00788998 /* DataBinder.swift in Sources */,
@@ -365,12 +368,14 @@
 				2401BC811F4F018C00788998 /* BenchmarkViewController.swift in Sources */,
 				E4A8A14124FE99B1009D872B /* FeedItemTextureNode.swift in Sources */,
 				BF3DC69820B560A400536177 /* FeedItemNotAutoLayoutView.swift in Sources */,
+				43B656052AD6F03C0038F1FC /* DivKitWithVariablesPerfView.swift in Sources */,
 				639E5A2020DF62D700C6BCEA /* NKFrameLayoutKitView.swift in Sources */,
 				2401BC9B1F4F03B300788998 /* ProfileCardLayout.swift in Sources */,
 				2401BC941F4F021F00788998 /* FeedItemFlexLayoutView.swift in Sources */,
 				2401BCA41F4F045F00788998 /* FeedItemAutoLayoutView.swift in Sources */,
 				24661D001F4EFFF5002CB883 /* AppDelegate.swift in Sources */,
 				2401BC991F4F029900788998 /* FeedItemLayout.swift in Sources */,
+				434DA0CA2AD5A9A500DECBCC /* DivKitPerfView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -490,10 +495,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -507,10 +513,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BZ7CR5V5FK;
 				INFOPLIST_FILE = LayoutFrameworkBenchmark/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.layoutbox.LayoutFrameworkBenchmark;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = morevsavva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -525,10 +535,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BZ7CR5V5FK;
 				INFOPLIST_FILE = LayoutFrameworkBenchmark/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.layoutbox.LayoutFrameworkBenchmark;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = morevsavva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
